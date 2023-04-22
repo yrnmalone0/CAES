@@ -24,30 +24,22 @@
                 {% if request.user.is_applicant %}
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">Home</a>
+                        <a href="{% url 'dashboard' %}" class="nav-link active" aria-current="page">Home</a>
                     </li>
                     {% if request.user.has_resume %}
                     <li class="nav-item">
                         <a href="{% url 'job-listing' %}" class="nav-link">Apply to Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'applied-jobs' %}" class="nav-link" aria-current="page">Manage Job Applications</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
                         <a href="{% url 'update-resume' %}" class="nav-link">Create resume</a>
                     </li>
                     {% endif %}
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a href="#" class="dropdown-item">Action</a></li>
-                            <li><a href="#" class="dropdown-item">Another Action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a href="#" class="dropdown-item">Something else here.</a></li>
-                        </ul>
-                    </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link disabled" tabindex="1" aria-disabled="true">Disabled</a>
+                        <a href="#" class="nav-link disabled" tabindex="1" aria-disabled="true">{{request.user.email}}</a>
                     </li>                   
                 </ul>
                 <a href="{% url 'logout' %}" class="btn btn-warning btn-sm">Logout</a>
@@ -69,19 +61,8 @@
                         <a href="{% url 'update-company' %}" class="nav-link">Create Company</a>
                     </li>
                     {% endif %}
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a href="#" class="dropdown-item">Action</a></li>
-                            <li><a href="#" class="dropdown-item">Another Action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a href="#" class="dropdown-item">Something else here.</a></li>
-                        </ul>
-                    </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link disabled" tabindex="1" aria-disabled="true">Disabled</a>
+                        <a href="#" class="nav-link disabled" tabindex="1" aria-disabled="true">{{request.user.email}}</a>
                     </li>
                 </ul>
                 <a href="{% url 'logout' %}" class="btn btn-warning btn-sm">Logout</a>
