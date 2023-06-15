@@ -24,9 +24,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('users.urls')),
     path('company/', include('company.urls')),
+    path('cv_paser_app/', include('cv_paser_app.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('job/', include('job.urls')),
-    path('resume/', include('resume.urls'))
+    path('resume/', include('resume.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

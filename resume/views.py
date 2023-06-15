@@ -31,3 +31,5 @@ def resume_details(request, pk):
     resume = Resume.objects.get(pk=pk)
     context = {'resume':resume}
     return render(request, 'resume/resume_details.html', context) 
+
+
